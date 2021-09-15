@@ -1,5 +1,5 @@
 
-This letter is to express my interest in your posting on $APPLICATION_LOCATION for an $POSITION_LEVEL $POSITION. With hands-on experience using $SWS1, $SWS2, $SWS3, and $SWS4 to $APPLIED_SKILLS, I am confident I will be an asset to your organization.
+This letter is to express my interest in your job posting on $APPLICATION_LOCATION for an $POSITION_LEVEL $POSITION. With hands-on experience using $SWS1, $SWS2, $SWS3, and $SWS4 to $APPLIED_SKILLS, I am confident I will be an asset to your organization.
 $STAND_SENTENCE
 Your listed requirements closely match my background and skills. A few I would like to highlight that would enable me to contribute to your bottom line are:
 •	$R1

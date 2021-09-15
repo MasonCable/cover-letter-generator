@@ -6,7 +6,7 @@ parser = ArgumentParser(description="This script will allow you to auto generate
 args = parser.parse_args()
 
 
-def get_inputs():
+def get_user_data():
     name = input("What is your full name: \n")
     applicationLocation = input("Where did you find this application? i.e. linkedin.com, glassdoor, indeed: \n")
     positionTitle = input("What position are you applying for? i.e., Software Engineer: \n")
@@ -19,7 +19,8 @@ def get_inputs():
     email = input("Provide an email for the recruiter to reach you at: \n")
 
     userDetails = {
-        'application_location': applicationLocation,
+        'name': name.title(),
+        'application_location': applicationLocation.title(),
         'position_title': positionTitle,
         'position_level': positionLevel,
         'single_word_skills': singleWordSkills,
@@ -32,13 +33,32 @@ def get_inputs():
     return userDetails
 
 def get_file_contents():
-    inputs = get_inputs()
+    userData = get_user_data()
     fileName = 'broiler_plate_letter.txt'
 
     with open(fileName) as f:
-        lines = f.readlines()
+        fileContents = f.read().replace('\n','$THIS_NEEDS_TO_BE_LINE_BREAK')        
     
-    for line in lines:
-        pass
+    return fileContents
 
-get_file_contents()
+
+def replace_file_variables():
+    data = get_file_contents()
+    dataArr = data.split()
+    al = [ i for i, x in enumerate(dataArr) if x == "$APPLICATION_LOCATION" ]
+    p = [ i for i,x in enumerate(dataArr) if x == "$POSITION." ]
+    n = [ i for i,x in enumerate(dataArr) if x == "$NAME" ]
+    pl = [ i for i,x in enumerate(dataArr) if x == "$POSITION_LEVEL" ]
+    pt = [ i for i,x in enumerate(dataArr) if x == "$POSITION_TITLE" ]
+    c = [ i for i,x in enumerate(dataArr) if x == "$CELL_PHONE" ]
+    e = [ i for i,x in enumerate(dataArr) if x == "$EMAIL" ]
+    ss = [ i for i,x in enumerate(dataArr) if x == "$STAND_SENTENCE" ]
+
+    
+
+    
+    print(p)
+
+
+
+replace_file_variables()
